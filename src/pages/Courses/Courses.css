@@ -1,0 +1,21 @@
+
+.course-list{
+    list-style: none;
+   
+    
+}
+.course-list a{
+    color:#099B92;
+    text-decoration: none;
+    display: block;
+    font-family: 'Ubuntu', sans-serif;
+  
+    padding:15px 11px;
+    cursor: pointer;
+    font-size: 23px;
+    font-weight: 500;
+   border-bottom:2px solid #099B92;
+}
+.course-list a:hover{
+    color:#099B92;
+}
