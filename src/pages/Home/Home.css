@@ -1,0 +1,41 @@
+.hero-area{
+    background-image: url('https://img.freepik.com/free-photo/student-lesson_1098-13541.jpg?w=1380&t=st=1666678772~exp=1666679372~hmac=9b5b5a55e0addbc0869d45572b0a12c57d7c7359e78e4ae24c9d3d2030927ae5');
+    background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+    padding:20rem 0;
+}
+.hero-area::after{
+    position:absolute;
+    content: '';
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background: rgb(38,246,233);
+    background: linear-gradient(238deg, rgba(38,246,233,0.5998774509803921) 0%, rgba(212,33,196,0.30575980392156865) 24%, rgba(0,0,0,0.6474964985994398) 67%);
+    z-index: -1;
+}
+.hero-content h1, p, .hero-btn{
+    font-family: 'Ubuntu', sans-serif;
+}
+.hero-content h1{
+    font-size: 4.5rem;
+    font-weight: 700;
+}
+.hero-content p{
+    font-size:19px;
+    font-weight: 300;
+    color:#fff;
+}
+.hero-btn{
+    font-size:23px;
+    font-weight: 500;
+    color:#fff;   
+    padding:13px 37px;
+    border:none;
+    border-radius:5px;
+    background-color: #099b92;
+}
