@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css'
 
 const Home = () => {
@@ -10,7 +11,9 @@ const Home = () => {
                     <div className='hero-content'>
                         <h1 className='text-white'>Build Your Carrer on Programming !!!</h1>
                         <p>Welcome to our programming site. If you want to be a successfull prorammer, our courses will be your best choice. We provide you standard courses.</p>
-                        <button className='hero-btn'>Courses</button>
+                        <Link to='/courses'> 
+                          <button className='hero-btn'>Courses</button> 
+                        </Link>
                     </div>
                </div>
                <div className='col-md-5'></div>

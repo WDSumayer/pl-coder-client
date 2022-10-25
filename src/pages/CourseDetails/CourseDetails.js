@@ -5,17 +5,37 @@ const CourseDetails = () => {
     const course = useLoaderData()
     const {description, duration, img, name, price, quizes, servies, videos} = course;
     return (
-        <div>
-            <img style={{height:'300px', width:'350px'}} src={img} alt=''></img>
-            <p>{name}</p>
-            <p>{price}</p>
-            <p>{quizes}</p>
-            <p>{description}</p>
-            <p>{videos}</p>
-            <p>{duration}</p>
+        <div className='container'>
+           <h1 className='text-center'>Welcome to {name} course</h1>
+           <div className="card mb-3">
+  <div className="row g-0">
+    <div className="col-md-5">
+      <img src={img} className="img-fluid rounded-start" alt=""/>
+    </div>
+    <div className="col-md-7">
+      <div className="card-body">
+        <h2 className="card-title">{name}</h2>
+        <p>{description}</p>
+        <div className='row'>
             {
-                servies.map(service => <li>{service}</li>)
+                 servies.map(service => <div className='col-md-6'><li>{service}</li></div>)
             }
+        </div>
+       <div className='d-flex justify-content-between align-items-center'>
+       <h3>{duration} months</h3>
+       <h3>{price} TK</h3>
+       </div>
+       <div className='d-flex'>
+        <p className='me-2'>Total {videos} videos</p>
+        <p>Total {quizes} quizes</p>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div className='d-flex justify-content-center'>
+<button style={{backgroundColor:'#099B92',fontWeight:'500'}} className='btn border-0 rounded text-white px-5 py-4 fs-5'>Get Premium Access</button>
+</div>
         </div>
     );
 };
