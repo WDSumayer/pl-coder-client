@@ -1,0 +1,10 @@
+.form-area{
+    width: 30%;
+    margin:45px auto;
+}
+.input-name, .input-email, .input-password, .input-confirm {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 19px;
+    font-weight: 500;
+    color:#444;
+}
