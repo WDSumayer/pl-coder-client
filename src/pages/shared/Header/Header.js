@@ -34,7 +34,7 @@ setToggle(true)
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className='py-3'>
       <Container>
         <div className='d-flex align-items-center'>
-        <Link className='nav-link' to='/'>React-Bootstrap</Link>
+        <Link className='nav-link' to='/'><h1 className='logo'><span style={{color:'#099B92'}}>PL</span>-Coder</h1></Link>
         </div>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -49,7 +49,7 @@ setToggle(true)
            
            {
             
-             user?.photoURL &&  <Image roundedCircle style={{height:'30px'}} src={user.photoURL} className="ms-3"></Image> || user?.photoURL === null && <FaRegUser></FaRegUser>  || undefined
+             user?.photoURL &&  <Image roundedCircle style={{height:'30px'}} src={user.photoURL} className="mx-3"></Image> || user?.photoURL === null && < FaRegUser className="mx-3 user-icon"></FaRegUser>  || undefined
             
            }
 

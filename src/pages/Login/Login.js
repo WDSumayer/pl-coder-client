@@ -7,6 +7,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { FaGoogle } from "react-icons/fa";
 import { GoogleAuthProvider } from 'firebase/auth';
+import './Login.css'
 
 const Login = () => {
     const {googleLogin, userLogin} = useContext(AuthContext)
@@ -78,7 +79,7 @@ const Login = () => {
    </Form>
    <div>
     <h5 className='text-center py-2'>or</h5>
-      <button onClick={handleGoogleLogin} style={{border:'1px solid #444',fontWeight:'500'}} className='btn rounded-1 text-dark py-3 w-100'><FaGoogle /></button>
+      <button onClick={handleGoogleLogin} style={{border:'1px solid #444',fontWeight:'500'}} className='btn rounded-1 text-dark py-3 w-100'><FaGoogle className='fs-4' /></button>
    </div>
        </div>
       </div>
