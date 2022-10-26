@@ -1,12 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import Blog from "../../pages/Blog/Blog";
+import CheckOut from "../../pages/CheckOut/CheckOut";
 import CourseDetails from "../../pages/CourseDetails/CourseDetails";
 import Courses from "../../pages/Courses/Courses";
 import Faq from "../../pages/Faq/Faq";
 import Home from "../../pages/Home/Home";
 import Login from "../../pages/Login/Login";
+import SuccessMessage from "../../pages/others/SuccessMessage/SuccessMessage";
 import Register from "../../pages/Register/Register";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
+
 
 
 export const routes = createBrowserRouter([
@@ -38,6 +42,14 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/register', element: <Register></Register>
+            },
+            {
+                path: '/success', element: <SuccessMessage></SuccessMessage>
+            },
+            {
+                path: '/checkout/:id',
+                loader:({params}) => fetch(`http://localhost:5000/checkout/${params.id}`),
+                element: <PrivateRoutes><CheckOut></CheckOut></PrivateRoutes>
             }
         ]
     }

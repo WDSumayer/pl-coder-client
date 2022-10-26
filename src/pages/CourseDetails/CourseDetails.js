@@ -1,9 +1,14 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 
 const CourseDetails = () => {
     const course = useLoaderData()
-    const {description, duration, img, name, price, quizes, servies, videos} = course;
+    const {id, description, duration, img, name, price, quizes, servies, videos} = course;
+    const navigate = useNavigate()
+
+    const handlePremium = (id) => {
+      navigate(`/checkout/${id}`)
+    }
     return (
         <div className='container'>
            <h1 className='text-center'>Welcome to {name} course</h1>
@@ -34,7 +39,7 @@ const CourseDetails = () => {
   </div>
 </div>
 <div className='d-flex justify-content-center'>
-<button style={{backgroundColor:'#099B92',fontWeight:'500'}} className='btn border-0 rounded text-white px-5 py-4 fs-5'>Get Premium Access</button>
+<button onClick={() => handlePremium(id)} style={{backgroundColor:'#099B92',fontWeight:'500'}} className='btn border-0 rounded text-white px-5 py-4 fs-5'>Get Premium Access</button>
 </div>
         </div>
     );

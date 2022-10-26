@@ -6,10 +6,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import Image from 'react-bootstrap/Image';
+import { FaRegUser } from "react-icons/fa";
 import './Header.css'
 
+
 const Header = () => {
-  const {user} = useContext(AuthContext)
+  const {user, logOut} = useContext(AuthContext)
   const [toggle, setToggle] = useState(true)
 
   const handleLight = () =>{
@@ -18,9 +21,17 @@ const Header = () => {
  const handleDark = () => {
 setToggle(true)
  }
+
+ const handleLogOut = () => {
+  logOut()
+  .then(() => {})
+  .catch(error => {
+    console.error(error)
+  })
+ }
     return (
         <div>
-            <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className='py-0'>
+            <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className='py-3'>
       <Container>
         <div className='d-flex align-items-center'>
         <Link className='nav-link' to='/'>React-Bootstrap</Link>
@@ -35,9 +46,28 @@ setToggle(true)
             <Link className='nav-link px-3' to='/courses'>Courses</Link>
             <Link className='nav-link px-3' to='/blog'>Blog</Link>
             <Link className='nav-link px-3' to='/faq'>FAQ</Link>
+           
+           {
+            
+             user?.photoURL &&  <Image roundedCircle style={{height:'30px'}} src={user.photoURL} className="ms-3"></Image> || user?.photoURL === null && <FaRegUser></FaRegUser>  || undefined
+            
+           }
 
-            <Link className='nav-link' to='/login'><button style={{border:'1px solid #444',fontWeight:'500'}} className='btn rounded-1 text-dark py-2 px-3 fs-5 ms-2'>Login</button></Link>
+           {
+             user?.uid ?
+             <>
+              
+            
+               
+              <button onClick={handleLogOut} style={{border:'1px solid #444',fontWeight:'500'}} className='my-2 btn rounded-1 text-dark py-2 px-3 fs-5 ms-2'>Log out</button>
+             </>
+            
+             :
+             <>
+              <Link className='nav-link' to='/login'><button style={{border:'1px solid #444',fontWeight:'500'}} className='btn rounded-1 text-dark py-2 px-3 fs-5 ms-2'>Login</button></Link>
             <Link className='nav-link' to='/register'><button style={{backgroundColor:'#099B92',fontWeight:'500'}} className='btn border-0 rounded-1 text-white px-3 py-2 fs-5 ms-2'>Sign up</button></Link>
+             </>
+           }
 
 
 
