@@ -14,5 +14,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: rgb(190, 190, 190);
+    color: #444;
+    border: 1px solid #444;
+    padding:3px;
 }

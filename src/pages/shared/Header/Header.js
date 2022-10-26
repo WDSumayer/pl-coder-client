@@ -7,7 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import Image from 'react-bootstrap/Image';
-import { FaRegUser } from "react-icons/fa";
+import { FaUserTie } from "react-icons/fa";
 import './Header.css'
 
 
@@ -40,7 +40,7 @@ setToggle(true)
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto d-flex align-items-center main-menu">
           {
-              toggle ? <button style={{width:'45px', height:'45px'}} className='fw-bold btn btn-warning rounded-circle border-0 me-5' onClick={handleLight}>L</button> :  <button style={{width:'45px', height:'45px'}} className='fw-bold btn btn-dark rounded-circle border-0 me-5' onClick={handleDark}>D</button>
+              toggle ? <button style={{width:'45px', height:'45px'}} className='fw-bold btn btn-warning rounded-circle border-0' onClick={handleLight}>L</button> :  <button style={{width:'45px', height:'45px'}} className='fw-bold btn btn-dark rounded-circle border-0' onClick={handleDark}>D</button>
            } 
             <Link className='nav-link px-3' to='/'>Home</Link>
             <Link className='nav-link px-3' to='/courses'>Courses</Link>
@@ -49,7 +49,7 @@ setToggle(true)
            
            {
             
-             user?.photoURL &&  <Image roundedCircle style={{height:'30px'}} src={user.photoURL} className="mx-3"></Image> || user?.photoURL === null && < FaRegUser className="mx-3 user-icon"></FaRegUser>  || undefined
+             user?.photoURL &&  <Image roundedCircle style={{height:'30px'}} src={user.photoURL} className="mx-3"></Image> || user?.photoURL === null && < FaUserTie className="mx-3 user-icon"></FaUserTie>  || undefined
             
            }
 
