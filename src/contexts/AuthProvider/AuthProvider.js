@@ -21,6 +21,9 @@ const AuthProvider = ({children}) => {
     const googleLogin = (provider) => {
         return signInWithPopup(auth, provider)
     }
+    const gitHubLogin = (provider) => {
+        return signInWithPopup(auth, provider)
+    }
 
     const userLogin = (email, password) => {
         setLoading(true)
@@ -49,7 +52,7 @@ const AuthProvider = ({children}) => {
 
 
 
-    const authInfo = {user, loading, createUser, googleLogin, userLogin, updateUserProfile, logOut }
+    const authInfo = {user, loading, createUser, googleLogin, gitHubLogin, userLogin, updateUserProfile, logOut }
 
     return (
         <AuthContext.Provider value={authInfo}>

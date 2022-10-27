@@ -5,23 +5,23 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
-import { FaGoogle } from "react-icons/fa";
-import { GoogleAuthProvider } from 'firebase/auth';
+import { FaGithub, FaGoogle } from "react-icons/fa";
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import './Login.css'
 
 const Login = () => {
-    const {googleLogin, userLogin} = useContext(AuthContext)
+    const {googleLogin, gitHubLogin, userLogin} = useContext(AuthContext)
     const [error, setError] = useState('')
     const navigate = useNavigate();
     const location = useLocation()
 
     const from = location.state?.from?.pathname || '/';
-    const provider = new GoogleAuthProvider()
+    const provider = new GoogleAuthProvider();
+    const gitProvider = new GithubAuthProvider()
     const handleGoogleLogin = () => {
       googleLogin(provider)
       .then(result => {
         const user = result.user
-        console.log(user)
         navigate(from, {replace: true})
       })
       .catch(error => {
@@ -29,6 +29,17 @@ const Login = () => {
       })
     }
 
+    const handleGigHubLogin = () => {
+      gitHubLogin(gitProvider)
+      .then(result => {
+        const user = result.user;
+        console.log(user)
+        navigate(from, {replace: true})
+      })
+      .catch(error => {
+        console.error(error)
+      })
+    }
 
     const handleLoginUser = (e) => {
         e.preventDefault()
@@ -74,12 +85,13 @@ const Login = () => {
      <Button style={{backgroundColor:'#099B92',fontWeight:'500'}} className='btn border-0 rounded text-white w-100 py-3 fs-5' type="submit">
        Log in
      </Button>
-     <p className='pt-3'>Create an account. <Link to='./register'>Register</Link></p>
+     <p className='pt-3'>Create an account. <Link to='/register'>Register</Link></p>
 
    </Form>
    <div>
     <h5 className='text-center py-2'>or</h5>
       <button onClick={handleGoogleLogin} style={{border:'1px solid #444',fontWeight:'500'}} className='btn rounded-1 text-dark py-3 w-100'><FaGoogle className='fs-4' /></button>
+      <button onClick={handleGigHubLogin} style={{border:'1px solid #444',fontWeight:'500'}} className='btn rounded-1 text-dark py-3 w-100 mt-3'><FaGithub className='fs-4' /></button>
    </div>
        </div>
       </div>

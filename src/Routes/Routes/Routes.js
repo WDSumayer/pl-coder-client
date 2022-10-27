@@ -7,6 +7,7 @@ import Courses from "../../pages/Courses/Courses";
 import Faq from "../../pages/Faq/Faq";
 import Home from "../../pages/Home/Home";
 import Login from "../../pages/Login/Login";
+import NotFoundPage from "../../pages/others/NotFoundPage/NotFoundPage";
 import SuccessMessage from "../../pages/others/SuccessMessage/SuccessMessage";
 import Register from "../../pages/Register/Register";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
@@ -23,7 +24,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/courses',
-                loader: () => fetch('http://localhost:5000/courses'),
+                loader: () => fetch('https://pl-coder-server-wdsumayer.vercel.app/courses'),
                 element: <Courses></Courses>
             },
             {
@@ -34,7 +35,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/course/:id',
-                loader: ({params}) => fetch(`http://localhost:5000/course/${params.id}`),
+                loader: ({params}) => fetch(`https://pl-coder-server-wdsumayer.vercel.app/course/${params.id}`),
                 element: <CourseDetails></CourseDetails>
             },
             {
@@ -48,9 +49,13 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/checkout/:id',
-                loader:({params}) => fetch(`http://localhost:5000/checkout/${params.id}`),
+                loader:({params}) => fetch(`https://pl-coder-server-wdsumayer.vercel.app/checkout/${params.id}`),
                 element: <PrivateRoutes><CheckOut></CheckOut></PrivateRoutes>
-            }
+            },
+            
         ]
+    },
+    {
+        path: '*', element: <NotFoundPage></NotFoundPage>
     }
 ])

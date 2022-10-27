@@ -5,10 +5,12 @@ import './SuccessMessage.css'
 const SuccessMessage = (props) => {
     return (
         <div className='container'>
-            <div className='success-message-box'>
+           <div style={{height:'100vh'}}>
+           <div className='success-message-box'>
                 <h4 className='text-success'>User Created Successfully</h4>
                 <Link to='/'><p>Back Home</p></Link>
             </div>
+           </div>
            
         </div>
     );

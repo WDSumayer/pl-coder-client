@@ -78,7 +78,7 @@ const Register = () => {
       <Button style={{backgroundColor:'#099B92',fontWeight:'500'}} className='btn border-0 rounded text-white w-100 py-3 fs-5' type="submit">
         Submit
       </Button>
-      <p className='pt-3'>Already have an account? <Link to='./login'>Log in</Link></p>
+      <p className='pt-3'>Already have an account? <Link to='/login'>Log in</Link></p>
     </Form>
         </div>
        </div>

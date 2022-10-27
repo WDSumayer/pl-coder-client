@@ -2,3 +2,14 @@
     padding-top:45px;
     background-color: #1E1E1E;
 }
+.footer-menu p a{
+    color:#ddd;
+    text-decoration: none;
+    font-size: 19px;
+}
+
+@media only screen and (max-width: 576px) {
+   .footer-logo, .footer-menu{
+    text-align: center;
+   }
+}

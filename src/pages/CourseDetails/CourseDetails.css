@@ -1,3 +1,11 @@
 .course-details-box{
     padding:5rem 0 9rem 0;
 }
+
+@media only screen and (max-width: 576px) {
+   .duration, .price {
+    font-size: 21px;
+    font-weight: 500;
+    margin:11px 0;
+   }
+ }

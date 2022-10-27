@@ -39,3 +39,14 @@
     border-radius:5px;
     background-color: #099b92;
 }
+
+@media only screen and (max-width: 576px) {
+    .hero-content{
+        text-align: center;
+    }
+    .hero-content h1 {
+        font-size: 45px;
+        font-weight: 500;
+    }
+
+}

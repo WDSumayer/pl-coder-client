@@ -1,0 +1,7 @@
+@media only screen and (max-width: 576px) {
+   .checkout-img{
+    width: 100%;
+    object-fit: cover;
+   }
+
+}
