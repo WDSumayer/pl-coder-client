@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import Image from 'react-bootstrap/Image';
 import { FaUserTie } from "react-icons/fa";
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 import './Header.css'
 
 
@@ -49,7 +51,7 @@ setToggle(true)
            
            {
             
-             user?.photoURL &&  <Image roundedCircle style={{height:'30px'}} src={user.photoURL} className="mx-3"></Image> || user?.photoURL === null && < FaUserTie className="mx-3 user-icon"></FaUserTie>  || undefined
+             user?.photoURL &&  <Tippy content={user.displayName}><Image roundedCircle style={{height:'30px'}} src={user.photoURL} className="mx-3"></Image></Tippy> || user?.photoURL === null && <Tippy content={user.displayName}><p className='m-0'>< FaUserTie className="mx-3 user-icon"></FaUserTie></p></Tippy>  || undefined
             
            }
 
