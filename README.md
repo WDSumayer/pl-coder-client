@@ -1,3 +1,27 @@
+
+### About this site
+The name of this site is "PL-Coder"
+
+# site link :
+
+1. This site has been built by 'React' which is a javaScript library.
+2. In this site 'React Bootstrap' has been used as a CSS Framework.
+3. Icons have been used from react icons 'FontAwsome'.
+4. Firebase hasbeen used as auth in this site.
+5. Data has been loaded from own made server.
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
