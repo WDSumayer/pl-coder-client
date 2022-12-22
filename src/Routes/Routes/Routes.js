@@ -24,7 +24,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/courses',
-                loader: () => fetch('https://pl-coder-server-wdsumayer.vercel.app/courses'),
+               
                 element: <Courses></Courses>
             },
             {
